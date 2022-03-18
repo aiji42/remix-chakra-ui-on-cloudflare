@@ -20,7 +20,7 @@ module.exports = {
     ];
     if (isServer) {
       option.mainFields = ["browser", "module", "main"];
-      option.inject.push(path.resolve(__dirname, "process-shim.ts"));
+      option.inject?.push(path.resolve(__dirname, "process-shim.ts"));
       option.define = {
         ...option.define,
         "process.env.DOTENV_CONFIG_ENCODING": null,
