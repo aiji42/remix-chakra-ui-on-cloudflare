@@ -11,13 +11,18 @@
     "dev:remix": "remix watch",
     "dev:miniflare": "cross-env NODE_ENV=development miniflare ./build/index.js --watch",
     "dev": "remix build && run-p dev:*",
-    "postinstall": "remix setup cloudflare-workers",
+    "postinstall": "remix setup cloudflare-workers && remix-esbuild-override",
     "start": "cross-env NODE_ENV=production miniflare ./build/index.js"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11",
+    "@emotion/server": "^11",
+    "@emotion/styled": "^11",
     "@remix-run/cloudflare-workers": "^1.3.1",
     "@remix-run/react": "^1.3.1",
     "cross-env": "^7.0.3",
+    "framer-motion": "^6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remix": "^1.3.1"
@@ -28,9 +33,13 @@
     "@remix-run/eslint-config": "^1.3.1",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "esbuild-plugin-alias": "^0.2.1",
     "eslint": "^8.11.0",
     "miniflare": "^2.1.0",
+    "no-op": "^1.0.3",
     "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.0",
+    "remix-esbuild-override": "^1.2.0",
     "typescript": "^4.5.5"
   },
   "engines": {
